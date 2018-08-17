@@ -1,10 +1,11 @@
-import {ADDGAME} from '../contants'
-export const fetchGames = (payload) => ({
-    type: "abc",
-    payload
+import {GETAllGAME,ADDGAME} from '../contants';
+import * as GameAPI from '../utils/GamesAPI';
+export const fetchGames = () => ({
+    type: GETAllGAME,
+    payload:GameAPI.getAll()
 })
 
-export const setGames = (payload) => ({
+export const setGames = (data) => ({
     type: ADDGAME,
-    payload
+    payload:GameAPI.push(data)
 })
